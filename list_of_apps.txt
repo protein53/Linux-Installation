@@ -10,7 +10,6 @@ neovim
 curl
 wget
 tree
-manuskript
 libgl1-mesa-glx # Anaconda Dependency
 libegl1-mesa    # Anaconda Dependency
 libxrandr2      # Anaconda Dependency
@@ -22,9 +21,5 @@ libxi6          # Anaconda Dependency
 libxtst6        # Anaconda Dependency
 vlc
 krita|ppa:kritalime/ppa
-stterm
 #CLI
-git clone https://github.com/AstroNvim/AstroNvim ~/.config/nvim; nvim +PackerSync
-curl -s "https://get.sdkman.io" | bash; source "$HOME/.sdkman/bin/sdkman-init.sh"; sdk install kotlin     # Kotlin
-curl --proto '=https' --tlsv1.3 https://sh.rustup.rs -sSf | sh  # Rust
-git clone https://github.com/nim-lang/Nim; cd Nim; git clone --depth 1 https://github.com/nim-lang/csources; cd Nim; cd csources && sh build.sh; cd ..; bin/nim c koch; ./koch boot -d:release                       # Nim
+git clone https://github.com/protein53/AstroNvimV6 ~/.config/nvim; nvim +PackerSync
