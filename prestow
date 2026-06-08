@@ -1,10 +1,31 @@
 #!/usr/bin/env bash
+# Usage:
+# Assumption here is that your stow directory is in ~/dotfiles and
+# 'prestow' (this bash script) is inside this stow directory.
+# 1. cd ~/dotfiles
+# 2. ./prestow --> this will create 'origdot' in your home folder
+#     organized like this
+#     ~/origdot/
+#     └── server_defaults/
+#         ├── .bashrc
+#         └── .config/
+#             └── nvim/
+#                 └── init.lua
+# 3. stow *  --> this will symlink your favorite dot files,
+# 4.  Use the system. All your dot files are now in effect.
+#     When you are done and want to restore the original
+#     dot files, go to step 5.
+# 5.  cd ~/dotfiles
+#     stow -D *
+#     cd ~/origdot/server_defaults
+#     stow *
+# 6.  All original dot files are now restored.
 
 # Exit immediately if a command exits with a non-zero status
 set -e
 
 # Configuration
-DOTFILES_DIR="$HOME/.dotfiles"
+DOTFILES_DIR="$HOME/dotfiles"
 BACKUP_DIR="$HOME/origdot"
 
 # Ensure we are running from the dotfiles directory
