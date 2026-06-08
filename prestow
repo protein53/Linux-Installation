@@ -1,0 +1,51 @@
+#!/usr/bin/env bash
+
+# Exit immediately if a command exits with a non-zero status
+set -e
+
+# Configuration
+DOTFILES_DIR="$HOME/.dotfiles"
+BACKUP_DIR="$HOME/origdot"
+
+# Ensure we are running from the dotfiles directory
+if [ ! -d "$DOTFILES_DIR" ]; then
+    echo "Error: $DOTFILES_DIR does not exist."
+    exit 1
+fi
+
+cd "$DOTFILES_DIR"
+
+echo "Scanning for conflicting original dotfiles..."
+
+# 1. Run stow in dry-run (-n) and verbose (-v) mode to see what it would link.
+# Stow outputs its dry-run decisions to stderr, so we redirect 2>&1 to grep it.
+stow -nv * 2>&1 | grep -E "LINK:|MKDIR:" | while read -r action path; do
+
+    # 'path' is relative to the target directory (usually $HOME)
+    # Target absolute path:
+    TARGET="$HOME/$path"
+
+    # We only care about backing up existing, REAL files or directories 
+    # that aren't already symlinks.
+    if [ -e "$TARGET" ] && [ ! -L "$TARGET" ]; then
+        
+        # Replicate the exact relative structure inside ~/origdot
+        # We need to create a parent 'package' folder matching how stow structures things.
+        # For simplicity, we can group these into a package folder named 'server_defaults'
+        BACKUP_TARGET="$BACKUP_DIR/server_defaults/$path"
+        BACKUP_PARENT=$(dirname "$BACKUP_TARGET")
+
+        echo "Found original: $path -> Backing up to $BACKUP_TARGET"
+
+        # Create the nested directory structure inside origdot
+        mkdir -p "$BACKUP_PARENT"
+
+        # Move the original file/folder to the backup directory
+        mv "$TARGET" "$BACKUP_TARGET"
+    fi
+done
+
+echo "--------------------------------------------------------"
+echo "Scan complete. Conflicting originals moved to $BACKUP_DIR"
+echo "You can now safely run 'stow *' inside $DOTFILES_DIR."
+echo "To restore later, run 'stow -D *' in your dotfiles, then 'stow *' inside $BACKUP_DIR/server_defaults"
