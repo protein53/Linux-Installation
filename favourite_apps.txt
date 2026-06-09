@@ -1,12 +1,13 @@
 #APT
 build-essential
+development-tools
+base-devel
 ninja-build
 meson
 libx11-dev
 clang
 zsh
 tmux
-neovim
 curl
 wget
 tree
@@ -19,7 +20,4 @@ libxcomposite1  # Anaconda Dependency
 libasound2      # Anaconda Dependency
 libxi6          # Anaconda Dependency
 libxtst6        # Anaconda Dependency
-vlc
-krita|ppa:kritalime/ppa
-#CLI
-git clone https://github.com/protein53/AstroNvimV6 ~/.config/nvim; nvim +PackerSync
+
