@@ -69,29 +69,17 @@ Steps 8, 9, 11, and 12 are to make the new installation consistent because insta
 16. **cd Linux-Installation**
 17. **sudo bash install_my_fave_apps_and_dots.sh**
 18. **sudo vim /etc/passwd - change your shell to /usr/bin/zsh**
+# Auto Installer Script
 
-If you want to install st manually,
+**install_favourite_apps.sh** automatically installs your favourite apps on Fedora, Debian/Ubuntu, or Arch Linux.
 
-$ sudo apt-get install libx11-dev libxext-dev libxft-dev
-
-download st source here: https://st.suckless.org/
-then,
-
-sudo make clean install
-
-## If you need to compile and it is giving you an error about missing dependency, 
-do the following:##
-
-To find to which package your include file (e.g. X11/extensions/XTest.h) belong to, install apt-file and search for it, example:
-
-$ sudo apt-get install apt-file
-$ sudo apt-file update
-$ apt-file search "X11/extensions/XTest.h"
-libxtst-dev: /usr/include/X11/extensions/XTest.h
-
-Once you've the package name, install via:
-
-sudo apt-get install libxtst-dev
+## How to use
+1. Edit `favourite_apps.txt` to include your apps (one per line).
+2. Run the script:
+   ```bash
+   chmod +x install_favourite_apps.sh
+   ./install_favourite_apps.sh
+   ```
 
 
 
