@@ -1,0 +1,6 @@
+org.videolan.VLC
+io.neovim.nvim
+org.blender.Blender
+org.kde.krita
+org.localsend.localsend_app
+io.github.aandrew_me.ytdn
