@@ -1,18 +1,17 @@
 #!/usr/bin/bash 
-# Download Nerd Font
-# 1. Create the local user font directory if it doesn't exist
-mkdir -p ~/.local/share/fonts
+# 1. Establish the user-space font repository directory
+mkdir -p ~/.local/share/fonts/CodeNewRoman
 
-# 2. Download the ComicShannsMono zip archive from the official Nerd Fonts release
-wget https://github.com/ryanoasis/nerd-fonts/releases/latest/download/ComicShannsMono.zip
+# 2. Fetch the CodeNewRoman asset payload from the official upstream pipeline
+wget https://github.com/ryanoasis/nerd-fonts/releases/latest/download/CodeNewRoman.zip
 
-# 3. Unzip the fonts directly into your font folder
-unzip ComicShannsMono.zip -d ~/.local/share/fonts/ComicShannsMono
+# 3. Extract the comprehensive true-type payloads directly into the font tree
+unzip CodeNewRoman.zip -d ~/.local/share/fonts/CodeNewRoman
 
-# 4. Clean up the downloaded zip file
-rm ComicShannsMono.zip
+# 4. Strip the raw compressed archive wrapper away
+rm CodeNewRoman.zip
 
-# 5. Clear and regenerate your system's font cache
+# 5. Force the underlying Fontconfig subsystem to re-index its cache directories
 fc-cache -fv
 
 # Install oh-my-posh prompt
