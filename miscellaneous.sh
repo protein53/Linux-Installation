@@ -1,14 +1,20 @@
 #!/usr/bin/bash 
-# Download Nerd Fonts
-wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.2.2/FantasqueSansMono.zip
-wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.2.2/Meslo.zip
-sudo mkdir /path/to/fonts/fontname
-sudo unzip FantasqueSansMono.zip -d /path/to/fonts/fontname
-sudo unzip Meslo.zip -d /path/to/fonts/fontname
-# Install PowerLevel10 prompt
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
-echo 'source ~/powerlevel10k/powerlevel10k.zsh-theme' >>~/.zshrc
-# Install AstroNvim
-git clone https://github.com/AstroNvim/AstroNvim ~/.config/nvim
-mkdir ~/.config/nvim/lua/user
-nvim
+# Download Nerd Font
+# 1. Create the local user font directory if it doesn't exist
+mkdir -p ~/.local/share/fonts
+
+# 2. Download the ComicShannsMono zip archive from the official Nerd Fonts release
+wget https://github.com/ryanoasis/nerd-fonts/releases/latest/download/ComicShannsMono.zip
+
+# 3. Unzip the fonts directly into your font folder
+unzip ComicShannsMono.zip -d ~/.local/share/fonts/ComicShannsMono
+
+# 4. Clean up the downloaded zip file
+rm ComicShannsMono.zip
+
+# 5. Clear and regenerate your system's font cache
+fc-cache -fv
+
+# Install oh-my-posh prompt
+curl -s https://ohmyposh.dev/install.sh | bash -s
+
