@@ -17,3 +17,6 @@ fc-cache -fv
 # Install oh-my-posh prompt
 curl -s https://ohmyposh.dev/install.sh | bash -s
 
+# 1. Download and execute the rust installer silently with default options (-y)
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+cargo install --locked --bin jj jj-cli
