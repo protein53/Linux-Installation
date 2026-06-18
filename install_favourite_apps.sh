@@ -116,7 +116,7 @@ case "$OS" in
     fedora|rhel|centos)
         install_fedora
         ;;
-    arch|manjaro|CachyOS Linux)
+    arch|manjaro|cachyos)
         install_arch
         ;;
     *)
