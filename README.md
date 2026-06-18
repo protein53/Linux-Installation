@@ -64,22 +64,20 @@ UUID=109abccf-7c8b-404a-b68e-2ffa168bc4ca none            swap    sw            
 Steps 8, 9, 11, and 12 are to make the new installation consistent because installation information are stored here.
 12. Reboot and confirm that there are no problems.
 13. Install git: **sudo apt-get install git**
-14. **cd /tmp**
-15. **sudo git clone https://github.com/npquintos/Linux-Installation.git**
+14. **cd**
+15. **sudo git clone https://github.com/protein53/Linux-Installation.git**
 16. **cd Linux-Installation**
 17. **sudo bash install_my_fave_apps_and_dots.sh**
 18. **sudo vim /etc/passwd - change your shell to /usr/bin/zsh**
 # Auto Installer Script
 
-**install_favourite_apps.sh** automatically installs your favourite apps on Fedora, Debian/Ubuntu, or Arch Linux.
+**install_my_fave_apps_and_dots.sh** automatically installs your favourite apps on Fedora, Debian/Ubuntu, or Arch/CachyOS Linux.
 
 ## How to use
 1. Edit `favourite_apps.txt` to include your apps (one per line).
-2. Run the script:
-   ```bash
-   chmod +x install_favourite_apps.sh
-   ./install_favourite_apps.sh
-   ```
+2. Edit 'flatpak_apps.txt' to include your other apps that has so many dependencies.
+3. Run the script:
+  sudo bash install_my_fave_apps_and_dots.sh
 
 
 
