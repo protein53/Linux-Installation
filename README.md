@@ -65,7 +65,7 @@ Steps 8, 9, 11, and 12 are to make the new installation consistent because insta
 12. Reboot and confirm that there are no problems.
 13. Install git: **sudo apt-get install git**
 14. **cd**
-15. **sudo git clone https://github.com/protein53/Linux-Installation.git**
+15. **git clone https://github.com/protein53/Linux-Installation.git**
 16. **cd Linux-Installation**
 17. **sudo bash install_my_fave_apps_and_dots.sh**
 18. **sudo vim /etc/passwd - change your shell to /usr/bin/zsh**
