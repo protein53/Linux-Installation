@@ -4,4 +4,4 @@ org.blender.Blender
 org.kde.krita
 org.localsend.localsend_app
 io.github.aandrew_me.ytdn
-com.github.sdv.whaler
+com.github.sdv43.whaler
