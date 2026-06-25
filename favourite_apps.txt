@@ -11,6 +11,7 @@ curl
 wget
 tree
 flatpak
+xonsh
 libgl1-mesa-glx # Anaconda Dependency
 libegl1-mesa    # Anaconda Dependency
 libxrandr2      # Anaconda Dependency
