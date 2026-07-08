@@ -12,6 +12,7 @@ wget
 tree
 flatpak
 xonsh
+stow
 libgl1-mesa-glx # Anaconda Dependency
 libegl1-mesa    # Anaconda Dependency
 libxrandr2      # Anaconda Dependency
