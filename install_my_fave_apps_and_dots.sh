@@ -3,8 +3,7 @@ bash install_flatpaks.sh&
 bash miscellaneous.sh&
 git clone https://github.com/protein53/dotfiles ~/dotfiles
 cd ~/dotfiles
-bash prestow.sh
-stow *
+xonsh save_backup_then_stow
 wait
 echo "Installation Complete"
 
