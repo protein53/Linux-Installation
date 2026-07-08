@@ -21,3 +21,5 @@ curl -s https://ohmyposh.dev/install.sh | bash -s
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 cargo install --locked --bin jj jj-cli
 curl -fsSL https://ollama.com/install.sh | sh
+# herdr is a tmux replacement
+curl -fsSL https://herdr.dev/install.sh | sh
