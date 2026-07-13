@@ -23,3 +23,4 @@ cargo install --locked --bin jj jj-cli
 curl -fsSL https://ollama.com/install.sh | sh
 # herdr is a tmux replacement
 curl -fsSL https://herdr.dev/install.sh | sh
+herdr plugin install lmilojevicc/herdr-splits.nvim
